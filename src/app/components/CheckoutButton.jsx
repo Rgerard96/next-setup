@@ -11,8 +11,6 @@ export default function CheckoutButton() {
             console.log(queryData);
             let data = JSON.parse(queryData.createCheckoutSession);
 
-            console.log(data);
-
             let checkoutUrl = data.url;
 
             window.location.assign(checkoutUrl);
@@ -20,10 +18,8 @@ export default function CheckoutButton() {
     });
 
 
-    if (loading)
-        return (
-            <Loading />
-        );
+    if (loading) return <Loading />;
+
     if (error) return `error = ${error}`;
 
     return (
